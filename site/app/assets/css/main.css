@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Neo-Pop Chaos — Design Tokens
+   Inspired by Open Props (https://open-props.style)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Colors — primitives
+   -------------------------------------------------------------------------- */
+:root {
+  --color-newsprint:    #f3ecdc;
+  --color-ink:          #15120e;
+  --color-pow-red:      #e8331c;
+  --color-blueprint:    #1b4ddb;
+  --color-marker:       #ffd300;
+  --color-paper:        #ffffff;
+  --color-muted:        #5b5446;
+  --color-dim:          #d8d1c2;
+  --color-dim-2:        #cfc7b6;
+
+  /* Semantic aliases */
+  --color-bg:           var(--color-newsprint);
+  --color-surface:      var(--color-paper);
+  --color-border:       var(--color-ink);
+  --color-text:         var(--color-ink);
+  --color-text-inverse: var(--color-newsprint);
+  --color-accent:       var(--color-pow-red);
+  --color-link:         var(--color-blueprint);
+  --color-highlight:    var(--color-marker);
+
+}
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+:root {
+  --font-display: 'Anton', sans-serif;
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body:    'Space Grotesk', system-ui, sans-serif;
+  --font-mono:    'Space Mono', monospace;
+  --font-hand:    'Caveat', cursive;
+
+  /* Fluid size scale */
+  --text-hero:    clamp(40px, 8vw,   108px);
+  --text-display: clamp(40px, 7vw,   76px);
+  --text-h2:      clamp(30px, 5vw,   58px);
+  --text-xl:      clamp(18px, 2vw,   26px);
+  --text-lg:      clamp(15px, 1.5vw, 18px);
+  --text-base:    16px;
+  --text-sm:      14px;
+  --text-xs:      13px;
+  --text-2xs:     12px;
+  --text-3xs:     11px;
+
+  /* Line heights */
+  --leading-none:    0.86;
+  --leading-tight:   0.9;
+  --leading-snug:    0.95;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.55;
+  --leading-loose:   1.7;
+
+  /* Letter spacing */
+  --tracking-tight:   -1px;
+  --tracking-wide:     0.5px;
+  --tracking-wider:    1px;
+  --tracking-widest:   2px;
+
+  /* Weights */
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+}
+
+/* --------------------------------------------------------------------------
+   Spacing — numeric scale + fluid values
+   -------------------------------------------------------------------------- */
+:root {
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Fluid */
+  --space-section: clamp(40px, 6vw, 72px);
+  --space-gap:     clamp(48px, 7vw, 88px);
+  --space-hero:    clamp(28px, 5vw, 56px);
+  --space-card:    clamp(20px, 3vw, 32px);
+  --space-inline:  clamp(16px, 4vw, 48px);
+}
+
+/* --------------------------------------------------------------------------
+   Borders
+   -------------------------------------------------------------------------- */
+:root {
+  --border-1: 1px solid var(--color-border);
+  --border-2: 2px solid var(--color-border);
+  --border-3: 3px solid var(--color-border);
+  --border-4: 4px solid var(--color-border);
+  --border-5: 5px solid var(--color-border);
+  --border-6: 6px solid var(--color-border);
+
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   Shadows — hard offset, print style
+   -------------------------------------------------------------------------- */
+:root {
+  --shadow-1:  2px  2px  0 var(--color-ink);
+  --shadow-2:  3px  3px  0 var(--color-ink);
+  --shadow-3:  4px  4px  0 var(--color-ink);
+  --shadow-4:  6px  6px  0 var(--color-ink);
+  --shadow-5:  7px  7px  0 var(--color-ink);
+  --shadow-6:  9px  9px  0 var(--color-ink);
+  --shadow-7:  10px 10px 0 var(--color-ink);
+  --shadow-8:  11px 11px 0 var(--color-ink);
+  --shadow-9:  12px 12px 0 var(--color-ink);
+
+  /* Coloured variants */
+  --shadow-red:    6px 6px 0 var(--color-pow-red);
+  --shadow-blue:   6px 6px 0 var(--color-blueprint);
+  --shadow-yellow: 6px 6px 0 var(--color-marker);
+}
+
+/* --------------------------------------------------------------------------
+   Easing & animation
+   -------------------------------------------------------------------------- */
+:root {
+  --ease-spring:  cubic-bezier(.2, .9, .3, 1.3);
+  --ease-out:     cubic-bezier(.4,  0, .2, 1);
+  --ease-in-out:  cubic-bezier(.4,  0, .6, 1);
+
+  --duration-fast:   80ms;
+  --duration-base:   180ms;
+  --duration-slow:   400ms;
+  --duration-slower: 600ms;
+
+  --animation-marquee:      marquee 22s linear infinite;
+  --animation-wiggle:       wiggle .5s ease;
+  --animation-pop:          comicPop .5s var(--ease-spring);
+  --animation-shake:        shakeX .4s ease;
+  --animation-bounce:       stickerBounce .6s var(--ease-spring);
+  --animation-spin:         rotateLabel linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Textures — ready-to-use background-image values
+   -------------------------------------------------------------------------- */
+:root {
+  /* Comic Halftone — large dots, 18px grid */
+  --texture-halftone:
+    radial-gradient(var(--color-ink) 30%, transparent 32%);
+  --texture-halftone-size: 18px 18px;
+
+  /* Ben-Day Dots — fine fill, 9px grid */
+  --texture-benday:
+    radial-gradient(var(--color-blueprint) 28%, transparent 30%);
+  --texture-benday-size: 9px 9px;
+
+  /* Newsprint Grain — SVG feTurbulence noise */
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Broadcast Scanlines */
+  --texture-scanlines:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.45) 0 2px, transparent 2px 5px);
+
+  /* Blueprint Grid — 16px */
+  --texture-grid:
+    linear-gradient(rgba(255,255,255,.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.55) 1px, transparent 1px);
+  --texture-grid-size: 16px 16px;
+
+  /* Ink Cross-Hatch — 7px diagonal */
+  --texture-crosshatch:
+    repeating-linear-gradient( 45deg, var(--color-ink) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(-45deg, var(--color-ink) 0 1px, transparent 1px 7px);
+
+  /* Pixel Dither — 1-bit, 8px */
+  --texture-dither:
+    linear-gradient( 45deg, var(--color-ink) 25%, transparent 0),
+    linear-gradient(-45deg, var(--color-ink) 25%, transparent 0),
+    linear-gradient( 45deg, transparent 75%, var(--color-ink) 0),
+    linear-gradient(-45deg, transparent 75%, var(--color-ink) 0);
+  --texture-dither-size:     8px 8px;
+  --texture-dither-position: 0 0, 0 4px, 4px -4px, -4px 0;
+
+  /* Misregistered CMYK — offset print dots */
+  --texture-cmyk:
+    radial-gradient(rgba(27,77,219,.55) 30%, transparent 32%),
+    radial-gradient(rgba(232,51,28,.55) 30%, transparent 32%);
+  --texture-cmyk-size:     16px 16px;
+  --texture-cmyk-position: 0 0, 6px 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Z-index layers
+   -------------------------------------------------------------------------- */
+:root {
+  --layer-base:    0;
+  --layer-raised:  1;
+  --layer-overlay: 10;
+  --layer-modal:   100;
+  --layer-toast:   1000;
+  --layer-grain:   9999;
+}
+
+/* ==========================================================================
+   Global keyframes
+   ========================================================================== */
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes wiggle {
+  0%,  100% { transform: rotate(var(--rot, 0deg)); }
+  25%        { transform: rotate(calc(var(--rot, 0deg) - 5deg)) scale(1.06); }
+  75%        { transform: rotate(calc(var(--rot, 0deg) + 5deg)) scale(1.06); }
+}
+
+@keyframes comicPop {
+  0%   { transform: scale(.4)    rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(1.12)  rotate( 2deg); opacity: 1; }
+  100% { transform: scale(1)     rotate( 0deg); opacity: 1; }
+}
+
+@keyframes shakeX {
+  0%,  100% { transform: translateX(0); }
+  20%        { transform: translateX(-4px); }
+  40%        { transform: translateX( 4px); }
+  60%        { transform: translateX(-3px); }
+  80%        { transform: translateX( 3px); }
+}
+
+@keyframes stickerBounce {
+  0%   { transform: translateY(-26px) scale(.7)   rotate(var(--rot, 0deg)); opacity: 0; }
+  55%  { transform: translateY(  6px) scale(1.08) rotate(var(--rot, 0deg)); opacity: 1; }
+  75%  { transform: translateY( -3px) scale(.98)  rotate(var(--rot, 0deg)); }
+  100% { transform: translateY(   0)  scale(1)    rotate(var(--rot, 0deg)); opacity: 1; }
+}
+
+@keyframes rotateLabel {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Motion utility classes
+   ========================================================================== */
+
+.m-card {
+  transition:
+    transform   var(--duration-base) var(--ease-spring),
+    box-shadow  var(--duration-base) var(--ease-spring);
+}
+.m-card:hover {
+  transform:  translate(-4px, -5px);
+  box-shadow: 11px 13px 0 var(--color-ink);
+}
+
+.m-press {
+  transition:
+    transform   var(--duration-fast) ease,
+    box-shadow  var(--duration-fast) ease;
+}
+.m-press:hover  { transform: translate(-2px, -2px); box-shadow: var(--shadow-6); }
+.m-press:active { transform: translate( 4px,  4px); box-shadow: var(--shadow-1); }
+
+.m-wiggle:hover           { animation: var(--animation-wiggle); }
+.m-shake:hover            { animation: var(--animation-shake); }
+.m-replay.playing         { animation: var(--animation-pop); }
+.m-replay-bounce.playing  { animation: var(--animation-bounce); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ==========================================================================
+   Text highlight utilities
+   ========================================================================== */
+
+.hl--pow    { background: var(--color-pow-red);   color: var(--color-paper);    padding: 0 6px; }
+.hl--marker { background: var(--color-marker);     color: var(--color-ink);      padding: 0 6px; }
+.hl--ink    { background: var(--color-ink);        color: var(--color-marker);   padding: 0 6px; }
+.hl--blue   { background: var(--color-blueprint);  color: var(--color-paper);    padding: 0 6px; }
+
+/* ==========================================================================
+   Texture utility classes
+   ========================================================================== */
+
+.comic-halftone {
+  background-image: var(--texture-halftone);
+  background-size:  var(--texture-halftone-size);
+}
+
+.comic-half-tone {
+  background-image: var(--texture-halftone);
+  background-size:  var(--texture-halftone-size);
+}
+
+.benday-dots {
+  background-image: var(--texture-benday);
+  background-size:  var(--texture-benday-size);
+}
+
+.newsprint-grain {
+  background-image: var(--texture-grain);
+}
+
+.scanlines {
+  background-image: var(--texture-scanlines);
+}
+
+.blueprint-grid {
+  background-image: var(--texture-grid);
+  background-size:  var(--texture-grid-size);
+}
+
+.crosshatch {
+  background-image: var(--texture-crosshatch);
+}
+
+.pixel-dither {
+  background-image:    var(--texture-dither);
+  background-size:     var(--texture-dither-size);
+  background-position: var(--texture-dither-position);
+}
+
+.cmyk-offset {
+  background-image:    var(--texture-cmyk);
+  background-size:     var(--texture-cmyk-size);
+  background-position: var(--texture-cmyk-position);
+}
