@@ -36,3 +36,77 @@
     </div>
   </section>
 </template>
+
+<style>
+.about {
+  position: relative;
+  background: var(--color-newsprint);
+  overflow: hidden;
+}
+.about__blob {
+  position: absolute;
+  right: -40px; top: 40px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background-image: radial-gradient(var(--color-blueprint) 26%, transparent 28%);
+  background-size: 16px 16px;
+  opacity: .5;
+  pointer-events: none;
+}
+.about__label-wrap { display: inline-block; transform: translateY(var(--ty,0px)) rotate(-2deg); }
+.about__heading {
+  margin: 14px 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(36px,7vw,92px);
+  line-height: .9;
+  letter-spacing: -1px;
+}
+.about__feel    { color: var(--color-blueprint); -webkit-text-stroke: 2px var(--color-ink); }
+.about__perform { background: var(--color-marker); padding: 0 8px; box-shadow: 4px 4px 0 var(--color-ink); }
+.about__grid {
+  display: grid;
+  gap: clamp(20px,4vw,56px);
+  margin-top: 48px;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .about__grid { grid-template-columns: 1.4fr 1fr; }
+}
+.about__lead { font-size: clamp(17px,1.7vw,21px); line-height: 1.6; font-weight: 500; margin: 0 0 18px; }
+.about__body { font-size: clamp(15px,1.4vw,18px); line-height: 1.7; margin: 0 0 16px; color: #312b22; }
+.about__cards { position: relative; display: grid; gap: 18px; }
+.about__quote-card {
+  transform: translateY(var(--ty,0px)) rotate(2deg);
+  background: var(--color-ink);
+  color: var(--color-newsprint);
+  border: 4px solid var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-blueprint);
+  padding: 22px;
+}
+.about__quote { margin: 0; font-family: var(--font-hand); font-size: 24px; color: var(--color-marker); line-height: 1; }
+.about__quote-sub { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: var(--color-dim); }
+.about__stat-card {
+  transform: translateY(var(--ty,0px)) rotate(-2deg);
+  background: var(--color-paper);
+  border: 4px solid var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-pow-red);
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.about__stat-num       { font-family: var(--font-display); font-size: 38px; line-height: 1; }
+.about__stat-num--blue { color: var(--color-blueprint); }
+.about__stat-num--red  { color: var(--color-pow-red); }
+.about__stat-label     { font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.about__aside {
+  position: absolute;
+  right: -6px; top: -30px;
+  font-family: var(--font-hand);
+  font-size: 26px;
+  color: var(--color-pow-red);
+  transform: rotate(8deg);
+}
+</style>

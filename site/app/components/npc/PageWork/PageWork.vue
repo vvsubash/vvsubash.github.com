@@ -50,3 +50,76 @@
     </div>
   </section>
 </template>
+
+<style>
+.work {
+  position: relative;
+  background: var(--color-blueprint);
+  border-bottom: 6px solid var(--color-ink);
+  overflow: hidden;
+}
+.work__blob {
+  position: absolute;
+  left: -50px; bottom: -30px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background-image: radial-gradient(var(--color-marker) 30%, transparent 32%);
+  background-size: 18px 18px;
+  opacity: .5;
+  pointer-events: none;
+}
+.work__heading {
+  margin: 14px 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(40px,7vw,94px);
+  line-height: .9;
+  color: var(--color-newsprint);
+  text-shadow: 4px 4px 0 var(--color-ink);
+}
+.work-list { display: grid; gap: clamp(24px,4vw,40px); margin-top: 48px; }
+.work-card { border: 5px solid var(--color-ink); box-shadow: 12px 12px 0 var(--color-ink); position: relative; }
+.work-card--light { background: var(--color-newsprint); }
+.work-card--dark  { background: var(--color-ink); color: var(--color-newsprint); box-shadow: 12px 12px 0 var(--color-pow-red); }
+.work-card__badge {
+  position: absolute;
+  top: -18px; left: -14px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  background: var(--color-pow-red);
+  color: var(--color-paper);
+  padding: 6px 12px;
+  border: 3px solid var(--color-ink);
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+.work-card__inner { padding: clamp(22px,3vw,34px); }
+.work-card__head  { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.work-card__company {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(30px,4.6vw,56px);
+  line-height: .95;
+  text-transform: uppercase;
+}
+.work-card__company--accent  { color: var(--color-pow-red); }
+.work-card__company--light   { color: var(--color-newsprint); }
+.work-card__company--yellow  { color: var(--color-marker); }
+.work-card__period           { font-family: var(--font-mono); font-weight: 700; font-size: 14px; padding: 6px 10px; }
+.work-card__period--dark     { background: var(--color-ink);    color: var(--color-marker); }
+.work-card__period--yellow   { background: var(--color-marker); color: var(--color-ink); }
+.work-card__role             { margin: 6px 0 0; font-family: var(--font-heading); font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+.work-card__role--blue       { color: var(--color-blueprint); }
+.work-card__role--yellow     { color: var(--color-marker); }
+.work-card__desc             { margin: 14px 0 0; font-size: clamp(15px,1.4vw,18px); line-height: 1.6; max-width: 62ch; }
+.work-card__desc--dim        { color: var(--color-dim); }
+.work-card__tags             { list-style: none; margin: 18px 0 0; padding: 0 0 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+.tag             { font-family: var(--font-mono); font-weight: 700; font-size: 12.5px; padding: 8px 12px; border: 2px solid; }
+.tag--dark       { background: var(--color-ink);       color: var(--color-paper);   border-color: var(--color-ink); }
+.tag--yellow     { background: var(--color-marker);    color: var(--color-ink);     border-color: var(--color-ink); }
+.tag--red        { background: var(--color-pow-red);   color: var(--color-paper);   border-color: var(--color-ink); }
+.tag--white      { background: var(--color-paper);     color: var(--color-ink);     border-color: var(--color-ink); }
+.tag--blue       { background: var(--color-blueprint); color: var(--color-paper);   border-color: var(--color-paper); }
+.tag--newsprint  { background: var(--color-newsprint); color: var(--color-ink);     border-color: var(--color-paper); }
+</style>

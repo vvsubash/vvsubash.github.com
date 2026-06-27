@@ -6,3 +6,26 @@
     </div>
   </div>
 </template>
+
+<style>
+.marquee-strip {
+  background: var(--color-ink);
+  border-bottom: 5px solid var(--color-ink);
+  overflow: hidden;
+  padding: 12px 0;
+}
+.marquee-strip__track {
+  display: flex;
+  width: max-content;
+  animation: pf-marquee 22s linear infinite;
+  font-family: var(--font-display);
+  font-size: clamp(18px,2.5vw,26px);
+  letter-spacing: 1px;
+  color: var(--color-newsprint);
+  text-transform: uppercase;
+}
+.marquee-strip__content { white-space: nowrap; }
+.mc--y { color: var(--color-marker); }
+.mc--r { color: var(--color-pow-red); }
+.mc--b { color: var(--color-blueprint); -webkit-text-stroke: 1px var(--color-paper); }
+</style>
