@@ -1,33 +1,55 @@
 <script setup lang="ts">
-const menuOpen = ref(false)
+const menuOpen = ref(false);
 const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-]
+  { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
 </script>
 
 <template>
   <nav aria-label="Primary" class="nav" id="top">
     <a href="#top" class="nav-logo" @click="menuOpen = false">
       <span aria-hidden="true" class="nav-logo__icon">V</span>
-      <span class="nav-logo__name">SUBASH<span class="nav-logo__dot">.dev</span></span>
+      <span class="nav-logo__name"
+        >SUBA<span class="nav-logo__dot">.SH</span></span
+      >
     </a>
     <div class="nav-links">
-      <a v-for="l in navLinks" :key="l.href" :href="l.href" class="nav-links__item">{{ l.label }}</a>
+      <a
+        v-for="l in navLinks"
+        :key="l.href"
+        :href="l.href"
+        class="nav-links__item"
+        >{{ l.label }}</a
+      >
       <a href="#contact" class="nav-links__cta">Say hi →</a>
     </div>
-    <button type="button" :aria-expanded="menuOpen" aria-label="Toggle menu" class="nav-burger" @click="menuOpen = !menuOpen">
-      <span aria-hidden="true" class="nav-burger__icon">{{ menuOpen ? '✕' : '≡' }}</span>
+    <button
+      type="button"
+      :aria-expanded="menuOpen"
+      aria-label="Toggle menu"
+      class="nav-burger"
+      @click="menuOpen = !menuOpen"
+    >
+      <span aria-hidden="true" class="nav-burger__icon">{{
+        menuOpen ? "✕" : "≡"
+      }}</span>
     </button>
   </nav>
-  <div role="dialog" aria-label="Menu" class="nav-drawer" :class="{ 'nav-drawer--open': menuOpen }">
+  <div
+    role="dialog"
+    aria-label="Menu"
+    class="nav-drawer"
+    :class="{ 'nav-drawer--open': menuOpen }"
+  >
     <ul class="nav-drawer__list">
       <li v-for="l in navLinks" :key="l.href">
         <a :href="l.href" class="nav-drawer__link" @click="menuOpen = false">
-          <span>{{ l.label }}</span><span aria-hidden="true" class="nav-drawer__arrow">→</span>
+          <span>{{ l.label }}</span
+          ><span aria-hidden="true" class="nav-drawer__arrow">→</span>
         </a>
       </li>
     </ul>
@@ -43,7 +65,7 @@ const navLinks = [
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px clamp(16px,4vw,48px);
+  padding: 14px clamp(16px, 4vw, 48px);
   background: var(--color-ink);
   border-bottom: 4px solid var(--color-ink);
 }
@@ -69,10 +91,12 @@ const navLinks = [
 .nav-logo__name {
   font-family: var(--font-heading);
   color: var(--color-newsprint);
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-size: 15px;
 }
-.nav-logo__dot { color: var(--color-marker); }
+.nav-logo__dot {
+  color: var(--color-marker);
+}
 
 .nav-links {
   display: none;
@@ -88,9 +112,14 @@ const navLinks = [
   padding: 8px 12px;
   border: 2px solid transparent;
   border-radius: 4px;
-  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+  transition:
+    color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
 }
-.nav-links__item:hover { color: var(--color-marker); border-color: var(--color-marker); }
+.nav-links__item:hover {
+  color: var(--color-marker);
+  border-color: var(--color-marker);
+}
 .nav-links__cta {
   text-decoration: none;
   font-family: var(--font-heading);
@@ -100,9 +129,14 @@ const navLinks = [
   padding: 9px 16px;
   border: 3px solid var(--color-paper);
   box-shadow: 3px 3px 0 var(--color-pow-red);
-  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  transition:
+    transform var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
 }
-.nav-links__cta:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 var(--color-pow-red); }
+.nav-links__cta:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--color-pow-red);
+}
 
 .nav-burger {
   display: grid;
@@ -117,7 +151,11 @@ const navLinks = [
   appearance: none;
   padding: 0;
 }
-.nav-burger__icon { font-family: var(--font-display); font-size: 20px; line-height: 1; }
+.nav-burger__icon {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1;
+}
 
 .nav-drawer {
   overflow: hidden;
@@ -127,10 +165,21 @@ const navLinks = [
   position: sticky;
   top: 66px;
   z-index: 190;
-  transition: max-height .32s cubic-bezier(.2,.9,.3,1.1), border-bottom-width .32s;
+  transition:
+    max-height 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.1),
+    border-bottom-width 0.32s;
 }
-.nav-drawer--open { max-height: 420px; border-bottom-width: 4px; }
-.nav-drawer__list { list-style: none; margin: 0; padding: 14px 16px; display: grid; gap: 8px; }
+.nav-drawer--open {
+  max-height: 420px;
+  border-bottom-width: 4px;
+}
+.nav-drawer__list {
+  list-style: none;
+  margin: 0;
+  padding: 14px 16px;
+  display: grid;
+  gap: 8px;
+}
 .nav-drawer__link {
   display: flex;
   align-items: center;
@@ -145,10 +194,17 @@ const navLinks = [
   border: 3px solid var(--color-ink);
   box-shadow: 4px 4px 0 var(--color-marker);
 }
-.nav-drawer__arrow { color: var(--color-marker); }
+.nav-drawer__arrow {
+  color: var(--color-marker);
+}
 
 @media (min-width: 768px) {
-  .nav-links { display: flex; }
-  .nav-burger, .nav-drawer { display: none; }
+  .nav-links {
+    display: flex;
+  }
+  .nav-burger,
+  .nav-drawer {
+    display: none;
+  }
 }
 </style>
